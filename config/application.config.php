@@ -1,12 +1,32 @@
 <?php
 return array(
+    'modules' => array(
+        'Application',
+        'Album',                  // <-- Add this line
+    ),
+    'module_listener_options' => array(
+        'config_glob_paths'    => array(
+            'config/autoload/{,*.}{global,local}.php',
+        ),
+        'module_paths' => array(
+            './module',
+            './vendor',
+        ),
+    ),
+);
+
+return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
         'Application',
+        'Album'
     ),
 
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(
+        'config_glob_paths'     => array(
+            'config/autoload/{,*.}{global,local}.php',
+        ),
         // This should be an array of paths in which modules reside.
         // If a string key is provided, the listener will consider that a module
         // namespace, the value of that key the specific path to that module's
